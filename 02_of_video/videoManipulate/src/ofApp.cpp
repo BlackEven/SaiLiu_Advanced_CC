@@ -3,7 +3,7 @@
 //--------------------------------------------------------------
 void ofApp::setup(){
 	//load a video
-	bgVideo.load("bgvideo.avi");
+	bgVideo.load("bgvideo.mp4");
 	//play the video
 	bgVideo.play();
 	//pause the loop so we can play frame by frame
