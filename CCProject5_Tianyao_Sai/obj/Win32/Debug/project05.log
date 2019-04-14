@@ -1,0 +1,15 @@
+﻿  ofApp.cpp
+c:\users\sai\documents\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\libs\openframeworks\math\ofvec3f.h : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+c:\users\sai\documents\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\libs\openframeworks\math\ofvec2f.h : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+c:\users\sai\documents\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\apps\myapps\project05\src\ofapp.cpp(15): warning C4996: 'ofTrueTypeFont::loadFont': Use load instead
+  c:\users\sai\documents\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\libs\openframeworks\graphics\oftruetypefont.h(193): note: see declaration of 'ofTrueTypeFont::loadFont'
+c:\users\sai\documents\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\apps\myapps\project05\src\ofapp.cpp(101): warning C4018: '<': signed/unsigned mismatch
+c:\users\sai\documents\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\apps\myapps\project05\src\ofapp.cpp(110): warning C4018: '<': signed/unsigned mismatch
+  project05.vcxproj -> C:\Users\Sai\Documents\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\apps\myApps\project05\bin\project05_debug.exe
+  
+  	                   2	C:\Users\Sai\Documents\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\libs\fmodex\lib\vs\Win32\
+  	  *多余文件   		 6018560	C:\Users\Sai\Documents\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\apps\myApps\project05\bin\FreeImage.dll
+  
+  	                   1	C:\Users\Sai\Documents\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\libs\FreeImage\lib\vs\Win32\
+  	  *多余文件   		 1266176	C:\Users\Sai\Documents\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\apps\myApps\project05\bin\fmodex.dll
+  	  *多余文件   		 1312768	C:\Users\Sai\Documents\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\apps\myApps\project05\bin\fmodexL.dll
