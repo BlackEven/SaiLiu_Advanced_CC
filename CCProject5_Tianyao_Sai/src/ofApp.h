@@ -1,6 +1,9 @@
 #pragma once
 
 #include "ofMain.h"
+#include "ofxOsc.h"
+
+#define PORT 8800
 
 class ofApp : public ofBaseApp{
 
@@ -24,6 +27,8 @@ class ofApp : public ofBaseApp{
 		//heartshape
 		void heartshape();
 		glm::vec2 make_point(float theta);
+		int distance = 20;
+		int scale_num = 20;
 
 		//writename
 		void writename();
@@ -33,5 +38,6 @@ class ofApp : public ofBaseApp{
 		//pdf render
 		bool pdfRendering;
 
-		
+		//osc
+		ofxOscReceiver receiver;
 };
