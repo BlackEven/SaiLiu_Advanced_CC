@@ -37,6 +37,9 @@ class ofApp : public ofBaseApp{
 
 		//pdf render
 		bool pdfRendering;
+		int isRender;
+
+		void pdf(int x);
 
 		//osc
 		ofxOscReceiver receiver;

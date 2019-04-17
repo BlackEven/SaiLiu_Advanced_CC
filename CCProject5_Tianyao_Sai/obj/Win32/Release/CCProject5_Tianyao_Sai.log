@@ -3,8 +3,8 @@ c:\users\sai\documents\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\libs\
 c:\users\sai\documents\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\libs\openframeworks\math\ofvec2f.h : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
 c:\users\sai\documents\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\apps\groupwork\ccproject5_tianyao_sai\src\ofapp.cpp(21): warning C4996: 'ofTrueTypeFont::loadFont': Use load instead
   c:\users\sai\documents\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\libs\openframeworks\graphics\oftruetypefont.h(193): note: see declaration of 'ofTrueTypeFont::loadFont'
-c:\users\sai\documents\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\apps\groupwork\ccproject5_tianyao_sai\src\ofapp.cpp(134): warning C4018: '<': signed/unsigned mismatch
-c:\users\sai\documents\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\apps\groupwork\ccproject5_tianyao_sai\src\ofapp.cpp(143): warning C4018: '<': signed/unsigned mismatch
+c:\users\sai\documents\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\apps\groupwork\ccproject5_tianyao_sai\src\ofapp.cpp(153): warning C4018: '<': signed/unsigned mismatch
+c:\users\sai\documents\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\apps\groupwork\ccproject5_tianyao_sai\src\ofapp.cpp(162): warning C4018: '<': signed/unsigned mismatch
      Creating library bin\CCProject5_Tianyao_Sai.lib and object bin\CCProject5_Tianyao_Sai.exp
   LINK : /LTCG specified but no code generation required; remove /LTCG from the link command line to improve linker performance
   CCProject5_Tianyao_Sai.vcxproj -> C:\Users\Sai\Documents\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\apps\groupwork\CCProject5_Tianyao_Sai\bin\CCProject5_Tianyao_Sai.exe

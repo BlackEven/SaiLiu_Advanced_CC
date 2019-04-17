@@ -37,6 +37,11 @@ void ofApp::update() {
 				//ofLogNotice() << "distance " << distance << endl;
 				scale_num = ofMap(x, 0., 1., 0, 20, true);
 			}
+
+			if (m.getAddress() == "/1/toggle1") {
+				isRender = m.getArgAsInt(0);
+				pdf(isRender);
+			}
 		}
 	}
 }
@@ -45,6 +50,17 @@ void ofApp::update() {
 void ofApp::draw() {
 	heartshape();
 	writename();
+}
+
+void ofApp::pdf(int x) {
+		if (x == 1) {
+			ofSetFrameRate(12);  // so it doesn't generate tons of pages
+			ofBeginSaveScreenAsPDF("recording-" + ofGetTimestampString() + ".pdf", true);
+		}
+		else if (x ==0) {
+			ofSetFrameRate(60);
+			ofEndSaveScreenAsPDF();
+		}
 }
 
 void ofApp::heartshape() {
@@ -58,7 +74,7 @@ void ofApp::heartshape() {
 		//calculate the position of the circle of each heart shape
 		auto param = (ofGetFrameNum() * 2 + scale * distance) % 720;
 		
-		//set color - red to white
+		//set color - white to red
 		ofColor color;
 		color.set(ofMap(param, 0, 360, 255, 219), ofMap(param, 0, 360, 255, 24), ofMap(param, 0, 360, 255, 24));
 		ofSetColor(color);
