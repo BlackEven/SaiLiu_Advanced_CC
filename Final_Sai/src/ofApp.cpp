@@ -39,8 +39,8 @@ void ofApp::setup(){
 	//init screen
 	ofBackground(0);
 	ofEnableBlendMode(OF_BLENDMODE_ADD);
-	img.loadImage("particle32.png");
-
+	img1.loadImage("particle32.png");
+	img2.loadImage("dot1.png");
 	//4 - HeadTracker
 	video.setup(320, 240);
 	finder.setup("haarcascade_frontalface_default.xml");
@@ -71,6 +71,7 @@ void ofApp::update(){
 							playsound(i);
 						}
 						keyeffect(i);
+						counter = 0;
 					}
 					else if (y == 0) {
 						stopsound();
@@ -81,6 +82,13 @@ void ofApp::update(){
 	}
 
 	//3-Particles
+	//key visulization-line width change
+	//update event slowly increments the counter variable
+	counter = counter + 0.033f;
+	if (counter >= ofDegToRad(90)) {
+		counter = ofDegToRad(90);
+	}
+
 	//update partciles
 	for (int i = 0; i < particles.size(); i++) {
 		particles[i].resetForce();
@@ -117,25 +125,55 @@ void ofApp::update(){
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-	
+
 	//3-Particles
 	//draw particle
 	ofPushStyle();
-	ofSetColor(255, 255, 255);
+	
 	for (int i = 0; i < particles.size(); i++) {
 		float posx = particles[i].pos.x - 16;
 		float posy = particles[i].pos.y - 16;
 		float posz = particles[i].pos.z;
-		img.draw(posx+centerx*0.2, posy, posz);
+		loc = posx + centerx * 0.2;
+		locy = posy - centery * 0.3 + 100;
+		if (change) {
+			ofSetColor(255,ofRandom(255),255);
+			img2.draw(loc, locy, posz);
+		}
+		else {
+			ofSetColor(255, 255, 255);
+			img1.draw(loc, posy, posz);
+		}
 	}
 	ofPopStyle();
 
+	//draw lines
 	ofPushStyle();
-	ofSetLineWidth(2);
-	ofSetColor(71,136,179);
-	ofDrawLine(0, 4 * ofGetHeight() / 5, ofGetWidth(), 4 * ofGetHeight() / 5);
+	if (change) {
+		ofSetLineWidth(1);
+		ofSetColor(255, 100, 255);
+		ofDrawLine(loc + ofGetWidth() / 48, 0, loc + ofGetWidth() / 48, ofGetHeight());
+	}
+	else {
+		ofSetLineWidth(2);
+		ofSetColor(71, 136, 179);
+		ofDrawLine(0, 4 * ofGetHeight() / 5, ofGetWidth(), 4 * ofGetHeight() / 5);
+	}
 	ofPopStyle();
 	
+	//draw key visualization
+	ofPushStyle();
+	ofEnableBlendMode(OF_BLENDMODE_DISABLED);
+	if (change) {
+		ofSetColor(255, 100, 255);
+		ofDrawCircle(loc+ofGetWidth() / 48, locy, 10 * cos(counter));
+	}
+	else {
+		ofSetColor(255, 255, 255);
+		ofSetLineWidth(10 * cos(counter));
+		ofDrawLine(loc, 4 * ofGetHeight() / 5, loc + ofGetWidth() / 24, 4 * ofGetHeight() / 5);
+	}
+	ofPopStyle();
 }
 void ofApp::keyeffect(int i) {
 	//3-Particles
@@ -188,10 +226,8 @@ void ofApp::stopsound() {
 void ofApp::keyPressed(int key){
 	//3-Particles
 	//clear all of the particles
-	if (key == 'c') {
-		particles.clear();
-	}
 	if (key == 'd') {
+		particles.clear();
 		change = !change;
 	}
 }

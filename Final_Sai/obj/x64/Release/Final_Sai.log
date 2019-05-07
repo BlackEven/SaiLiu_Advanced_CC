@@ -14,6 +14,8 @@ c:\users\sai\documents\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\apps\
   c:\users\sai\documents\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\libs\openframeworks\sound\ofsoundstream.h(31): note: see declaration of 'ofSoundStreamSetup'
 c:\users\sai\documents\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\apps\final\final_sai\src\ofapp.cpp(42): warning C4996: 'ofImage_<unsigned char>::loadImage': Use load instead
   c:\users\sai\documents\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\libs\openframeworks\graphics\ofimage.h(227): note: see declaration of 'ofImage_<unsigned char>::loadImage'
+c:\users\sai\documents\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\apps\final\final_sai\src\ofapp.cpp(43): warning C4996: 'ofImage_<unsigned char>::loadImage': Use load instead
+  c:\users\sai\documents\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\libs\openframeworks\graphics\ofimage.h(227): note: see declaration of 'ofImage_<unsigned char>::loadImage'
      Creating library bin\Final_Sai.lib and object bin\Final_Sai.exp
   LINK : /LTCG specified but no code generation required; remove /LTCG from the link command line to improve linker performance
   Final_Sai.vcxproj -> C:\Users\Sai\Documents\of_v0.10.1_vs2017_release\of_v0.10.1_vs2017_release\apps\final\Final_Sai\bin\Final_Sai.exe

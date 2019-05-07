@@ -58,10 +58,14 @@ class ofApp : public ofBaseApp{
 
 		//3-Particles
 		vector <Particle> particles;
-		ofImage img;
+		ofImage img1;
+		ofImage img2;
 		void keyeffect(int i);
 		float centerx;
 		float centery;
+		float loc = -100;
+		float locy = -100;
+		float counter;
 
 		//4-HeadTracker
 		ofVideoGrabber video;
