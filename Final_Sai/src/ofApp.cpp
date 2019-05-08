@@ -2,6 +2,7 @@
 
 //--------------------------------------------------------------
 void ofApp::setup(){
+	ofSetFullscreen(isfull);
 	//1-OSC
 	//set up osc
 	receiver.setup(PORT);
@@ -62,6 +63,7 @@ void ofApp::update(){
 					keys[i] = y;
 					ofLogNotice() << "key" << i << " " << y << endl;
 					if (y == 1) {
+						ispressed = true;
 						if (change) {
 							//2.1Piano
 							key_sounds[i].play();
@@ -75,6 +77,7 @@ void ofApp::update(){
 					}
 					else if (y == 0) {
 						stopsound();
+						ispressed = false;
 					}
 				}
 			}
@@ -84,7 +87,9 @@ void ofApp::update(){
 	//3-Particles
 	//key visulization-line width change
 	//update event slowly increments the counter variable
-	counter = counter + 0.033f;
+	if (ispressed == false) {
+		counter = counter + 0.033f;
+	}
 	if (counter >= ofDegToRad(90)) {
 		counter = ofDegToRad(90);
 	}
@@ -97,16 +102,19 @@ void ofApp::update(){
 	}
 	//delete partciles
 	auto ms = ofGetElapsedTimeMillis();
-	if (particles.size() > 10) {
-		if (ms % 20 == 0) {
-			//ofLogNotice() << "delete";
-			particles.erase(particles.begin());
+	if (ispressed == false) {
+		if (particles.size() > 0) {
+			if (ms % 10 == 0) {
+				//ofLogNotice() << "delete";
+				particles.erase(particles.begin());
+			}
 		}
-	}else if (particles.size() < 10 && particles.size() > 0) {
-		if (ms % 80 == 0) {
-			//ofLogNotice() << "delete2";
-			//particles.pop_back();
-			particles.erase(particles.begin());
+		else if (particles.size() < 8 && particles.size() > 0) {
+			if (ms % 60 == 0) {
+				//ofLogNotice() << "delete2";
+				//particles.pop_back();
+				particles.erase(particles.begin());
+			}
 		}
 	}
 
@@ -139,6 +147,8 @@ void ofApp::draw(){
 		if (change) {
 			ofSetColor(255,ofRandom(255),255);
 			img2.draw(loc, locy, posz);
+			ofNoFill();
+			ofDrawBox(loc, locy, posz,ofRandom(5));
 		}
 		else {
 			ofSetColor(255, 255, 255);
@@ -229,6 +239,10 @@ void ofApp::keyPressed(int key){
 	if (key == 'd') {
 		particles.clear();
 		change = !change;
+	}
+	if (key == 'f') {
+		isfull = !isfull;
+		ofSetFullscreen(isfull);
 	}
 }
 

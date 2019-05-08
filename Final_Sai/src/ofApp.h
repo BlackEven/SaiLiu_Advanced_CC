@@ -26,6 +26,9 @@ class ofApp : public ofBaseApp{
 		void windowResized(int w, int h);
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
+
+		bool isfull = false;
+
 		//1-OSC
 		//create an osc receiver
 		ofxOscReceiver receiver;
@@ -55,6 +58,8 @@ class ofApp : public ofBaseApp{
 		void stopsound();
 		
 		string currentWave = "sine";
+
+		bool ispressed;
 
 		//3-Particles
 		vector <Particle> particles;
